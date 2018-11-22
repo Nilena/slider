@@ -1,0 +1,14 @@
+
+li{
+	list-style-type: none;
+}
+.slide_images img {
+	width: 370px;
+	height:500px;
+ position:absolute;
+ margin-left:150px;
+}
+
+.arrow-next{
+	right:500px;
+}
