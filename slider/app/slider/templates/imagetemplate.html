@@ -2,29 +2,15 @@
  <meta name="viewport" content="width=device-width, initial-scale=1">
      <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	
 	<div id="slider-container1">
 
-		<span class="material-icons">radio_button_unchecked</span>
-		<span class="material-icons">radio_button_unchecked</span>
-		<span class="material-icons">radio_button_unchecked</span>
-		<span class="material-icons">radio_button_unchecked</span>
-		<span class="material-icons">radio_button_unchecked</span>
-		<div class="slide_images">
-		<div ng-repeat="slideimage in slides track by $index" active="slide.active">
-		<br>
-		<img ng-src="{{slideimage.images}}">
-<!-- 
-		<a href="#" ng-click="nextSlide()"></a>
-		<span class="material-icons">arrow_forward_ios</span></a> -->
-		</div><a href="#" ng-click="nextSlide()"><span class="material-icons arrow-next">arrow_forward_ios</span></a>
-    	
-<!-- 
-		<nav class="nav">
-	<div class="wrapper">
-	<ul class="dots">
-		<li class="dot" ng-repeat="slide in slides">
-            <a href="#" ng-class="{'active':checkcurrentIndex($index)}"
-                       ng-click="setcurrentIndex($index);">{{slide.description}}</a></li>
-</ul></div> -->
-<!-- </nav>
- -->
+		<i class="material-icons rowbtns" ng-class="{ active: i==$index}"ng-repeat="slide in slides track by $index" ng-click="thisImage($index)" ng-model="slide.status">fiber_manual_record</i>
+		<div class="slide_arrow">
+			<i ng-click="previousSlide()" class="material-icons sliderArrows left">keyboard_arrow_left</i>
+      		<i ng-click="nextSlide()" class="material-icons sliderArrows right">keyboard_arrow_right</i>
+      		</div>	
+			<div class="slide_images">
+				<img ng-src="{{currentImage.images}}">	
+			</div>
+	</div>

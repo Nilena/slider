@@ -1,4 +1,4 @@
 (function (){
 	angular
-	.module('myApp',["ngRoute"]);
+	.module('myApp',["ngAnimate","ngRoute"]);
 })();
