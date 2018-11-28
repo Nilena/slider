@@ -3,14 +3,18 @@
      <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	
-	<div id="slider-container1">
-
-		<i class="material-icons rowbtns" ng-class="{ active: i==$index}"ng-repeat="slide in slides track by $index" ng-click="thisImage($index)" ng-model="slide.status">fiber_manual_record</i>
-		<div class="slide_arrow">
-			<i ng-click="previousSlide()" class="material-icons sliderArrows left">keyboard_arrow_left</i>
-      		<i ng-click="nextSlide()" class="material-icons sliderArrows right">keyboard_arrow_right</i>
-      		</div>	
+	<div class="slide-container">
+		<div class="slide">
 			<div class="slide_images">
-				<img ng-src="{{currentImage.images}}">	
+				<img ng-src="{{currentImage.images}}" >	
 			</div>
+			<div class="slide_arrow">
+				<i ng-click="previousSlide()" class="material-icons sliderArrows left">keyboard_arrow_left</i>
+      			<i ng-click="nextSlide()" class="material-icons sliderArrows right">keyboard_arrow_right</i>
+      			<div class="btn">
+				<i class="material-icons rowbtns" ng-class="{active: i==$index}"ng-repeat="slide in interArr track by $index" ng-click="thisImage($index)" ng-model="slide.status">fiber_manual_record</i>
+
+				</div>
+			</div>
+		</div>
 	</div>

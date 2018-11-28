@@ -15,42 +15,62 @@ function sliderdirective($interval) {
 	
 	return sliderObj;
 		function link(scope, element, attrs) {	
-scope.i = 0;
+		scope.i = 0;
+		let timer;
+		scope.interArr= [];
 		 scope.slides= [
 			{
-				images:"assets/images/music/3.jpg",
+				images:"assets/images/music/1.png",
 				status:false,
 				desc:'KeyboardCode'
 			},
 			{
-				images:"assets/images/music/4.jpg",
+				images:"assets/images/music/2.png",
 				status:false,
 				desc:'keyboardCode'
 			},
 			{
-				images:"assets/images/music/5.jpg",
+				images:"assets/images/music/3.png",
 				status:false,
 				desc:'KeyboardCode'
 			},
 			{
-				images:"assets/images/music/1.jpg",
+				images:"assets/images/music/4.png",
 				status:false,
 				desc:'KeyboardCode'
 			},
 			{
-				images:"assets/images/music/2.jpg",
+				images:"assets/images/music/5.png",
 				status:false,
 				desc:'KeyboardCode'
 			},
 			{
-				images:"assets/images/music/6.jpg",
+				images:"assets/images/music/6.png",
 				status:false,
 				desc:'KeyboardCode'
 			}
 		];
+			let j =0;
+			function addImage(){
+
+				for( let k =0; k<3; k++ )
+				{
+					scope.interArr.push(scope.slides[j]);
+					j++;
+				}
+				
+				if( j === 6){
+					j=0;
+				}
+			}
+			addImage();
+		function removeImage() {
+
+			scope.interArr=[];
+		}
 
 			function init() {
-				scope.currentImage=scope.slides[scope.i];
+				scope.currentImage=scope.interArr[scope.i];
 			}
 			init(); 
 
@@ -58,30 +78,45 @@ scope.i = 0;
 				// scope.statuscheck = scope.slides[i].status;
 				
 				scope.i += 1;
-				if(scope.i == scope.slides.length){
+				if(scope.i == scope.interArr.length){
 						scope.i=0;
+						removeImage();
+						addImage();
 				}
 				init();
-			}	
+				$interval.cancel(timer);
+				time();			}	
 
 			scope.previousSlide = function() {
 				scope.i-= 1;
-				if(i< 0)
+				if(scope.i< 0)
 				{
-						scope.i=scope.slides.length-1;
+					removeImage();
+						addImage();
+						scope.i=scope.interArr.length-1;
+
+						
 				}
 				init();
+				$interval.cancel(timer);
+				console.log(timer);
+				time();
 				}
 
-				$interval(function() {
-                scope.nextSlide();
-           		 }, 2000);
+				function time(){
 
+				timer = $interval(function() {
+                scope.nextSlide();
+           		 }, 4000);
+				}
+				time();
 
 			scope.thisImage = function(index) {
 				scope.i = index;
-
 				init();
+				timer=$interval.cancel(timer);
+				time();
+				
 			}
 			// scope.interArr = function (index){
 
