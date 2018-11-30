@@ -1,0 +1,21 @@
+<link rel="stylesheet" type="text/css" href="assets/css/slider.css">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><!-- <h2 align="center">AngularJS Image Slider!</h2> -->
+<div class="slide-container" ng-controller="sliderCtrl as slider">
+	<div class="slide">
+	<div class="slide_images">
+		<div  ng-repeat="image in slideShow track by $index" >
+			<img   ng-src="{{image.src}}" class="img" ng-mouseenter="stop()" 
+			ng-mouseleave="timer()"ng-show="image.status">
+		</div>
+		<div class="slide_arrow">
+		<i ng-click="previous()" class="material-icons sliderArrows left">keyboard_arrow_left</i>
+      			<i ng-click="next()" class="material-icons sliderArrows right">keyboard_arrow_right</i>
+		</div>
+		<div class="btn">
+			<i class="material-icons" ng-repeat="button in buttonSlide track by $index" ng-click="thisImage(button.id)" ng-class="{active: button.status}">fiber_manual_record</i>
+		</div>
+	</div>
+</div>
+

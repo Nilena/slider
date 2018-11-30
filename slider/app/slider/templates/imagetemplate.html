@@ -6,15 +6,36 @@
 	<div class="slide-container">
 		<div class="slide">
 			<div class="slide_images">
-				<img ng-src="{{currentImage.images}}" >	
-			</div>
+			<div  ng-repeat="slide in slides track by $index"  class="slide" >
+				<img ng-src="{{slide.images}}" ng-mouseenter="stop()" ng-mouseleave="timer()" ng-show="image.status"><!-- class="animate-show" fade-in/
+ -->			</div>
 			<div class="slide_arrow">
 				<i ng-click="previousSlide()" class="material-icons sliderArrows left">keyboard_arrow_left</i>
       			<i ng-click="nextSlide()" class="material-icons sliderArrows right">keyboard_arrow_right</i>
+      			</div>
       			<div class="btn">
-				<i class="material-icons rowbtns" ng-class="{active: i==$index}"ng-repeat="slide in interArr track by $index" ng-click="thisImage($index)" ng-model="slide.status">fiber_manual_record</i>
+				<i class="material-icons rowbtns" ng-class="{active:statusChanger($index)}"ng-repeat="slide in interArr track by $index" ng-click="thisImage($index)" ng-model="slide.status">fiber_manual_record</i>
 
 				</div>
-			</div>
+			
 		</div>
 	</div>
+
+<!-- 
+		<div ng-repeat="image in slides track by $index"  class="slide" align="center">
+			<img ng-src="{{image.src}}" class="image" align="center" ng-show="image.status">
+		</div>
+		<div class="slideButtons" align="center">
+			<i class="material-icons" id="leftnocursor">arrow_left</i>
+			<i class="material-icons" ng-repeat="button in buttonSlide track by $index" ng-click="getImage(button.id)" ng-class="{active: button.status}">fiber_manual_record</i>
+			<i class="material-icons" id="rightnocursor">arrow_right</i>
+		</div>
+		<div class="slideControls">
+			<i class="material-icons left noSelect" ng-click="previous()">arrow_left</i>
+			<i class="material-icons right noSelect" ng-click="next()">arrow_right</i>
+		</div>
+	</div>
+</div>
+
+
+	 -->

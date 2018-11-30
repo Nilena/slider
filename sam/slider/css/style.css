@@ -1,0 +1,170 @@
+/*	.slideContainer,.slideControls,.slideButtons{
+		position: relative;
+	}
+
+	.active{
+		color: #0052cc;
+	}
+
+	 .slide img{
+	 	background-position: center;
+	 	background-repeat: no-repeat;
+	 	background-size: cover;
+	 	width: 100%;
+	 	height: 550px;
+	 	position: absolute;
+	 	top: 0;
+	 	left: 0;
+	 }
+
+	.material-icons{
+		cursor: pointer;
+	}
+
+	.slideButtons{
+		top: 500px;
+	}
+
+	#leftnocursor,#rightnocursor{
+		cursor: default;
+	}
+
+	.left,.right{ 
+		font-size: 96px !important;
+		color: #b3b3b3;
+		position: absolute;
+		top: 170px;
+		display: inline-block;
+		background-color: transparent;
+	}
+
+	.left{
+		left: 0;
+	}
+
+	.right{
+		right: 0;
+		float: right;
+	}
+
+.noSelect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* animation*/
+ /* .image.ng-hide-remove{
+  	animation: myAnimation 1s; 
+  }
+
+@keyframes myAnimation{
+	 from {left: 0px;
+    	}
+    to {left: 200px;
+    }
+}
+
+ .image.ng-hide-add{
+ 	animation: myNewAnimation 1s;
+ }
+
+ @keyframes myNewAnimation{
+ 	from {right: 0px;
+      }
+    to {right: 200px;
+   }
+ }
+*/
+
+
+
+	.slideContainer,.slideControls,.slideButtons{
+		position: relative;
+	}
+
+	.active{
+		color: #0052cc;
+	}
+
+	 .slide img{
+	 	background-position: center;
+	 	background-repeat: no-repeat;
+	 	background-size: cover;
+	 	width: 100%;
+	 	height: 550px;
+	 	position: absolute;
+	 	top: 0;
+	 	left: 0;
+	 }
+
+	.material-icons{
+		cursor: pointer;
+	}
+
+	.slideButtons{
+		top: 500px;
+	}
+
+	#leftnocursor,#rightnocursor{
+		cursor: default;
+	}
+
+	.left,.right{ 
+		font-size: 96px !important;
+		color: #b3b3b3;
+		position: absolute;
+			margin-top:300px;
+	border-color: solid black;
+	background-color: rgba(128,128,128,0.5);
+	border-radius: 6px;
+  padding: 10px;
+	cursor: pointer;
+	color:yellow;
+	}
+
+	.left{
+		left: 0;
+	}
+
+	.right{
+		right: 0;
+		float: right;
+	}
+
+.noSelect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* animation
+  .image.ng-hide-remove{
+  	animation: myAnimation 1s; 
+  }
+
+@keyframes myAnimation{
+	 from {left: 0px;
+    	}
+    to {left: 200px;
+    }
+}
+
+ .image.ng-hide-add{
+ 	animation: myNewAnimation 1s;
+ }
+
+ @keyframes myNewAnimation{
+ 	from {right: 0px;
+      }
+    to {right: 200px;
+   }
+ }
+
+
